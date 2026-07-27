@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class ParkingSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int slots = 5;
+
+        while (true) {
+            System.out.println("\n===== Smart Parking System =====");
+            System.out.println("1. Park Vehicle");
+            System.out.println("2. Show Available Slots");
+            System.out.println("3. Exit");
+            System.out.print("Enter Choice: ");
+
+            int choice = sc.nextInt();
+
+            switch (choice) {
+                case 1:
+                    if (slots > 0) {
+                        slots--;
+                        System.out.println("Vehicle Parked Successfully.");
+                    } else {
+                        System.out.println("Parking Full!");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Available Slots: " + slots);
+                    break;
+
+                case 3:
+                    System.out.println("Thank You!");
+                    sc.close();
+                    return;
+
+                default:
+                    System.out.println("Invalid Choice!");
+            }
+        }
+    }
+}
